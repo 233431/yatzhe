@@ -1,0 +1,26 @@
+
+.game-board div {
+    font-size: 24px;
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+  }
+  
+  .game-board div.locked {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  button {
+    margin: 5px;
+  }
+  
+  button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  

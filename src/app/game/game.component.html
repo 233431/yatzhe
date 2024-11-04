@@ -1,0 +1,20 @@
+
+<div class="game-board">
+
+    <app-dice *ngFor="let die of diceValues; let i = index"
+              [value]="die"
+              [locked]="diceLocks[i]"
+              (lockToggle)="toggleDiceLock(i)">
+    </app-dice>
+  
+
+    <button (click)="rollDice()" [disabled]="rollsLeft === 0 || turnFinished">Roll Dice</button>
+    <button (click)="markPlay()" [disabled]="!turnFinished">Mark Play</button>
+    <button (click)="resetGame()">Reset Game</button>
+  
+
+    <div>Puntaje: {{ score }}</div>
+    <div>Rolls Left: {{ rollsLeft }}</div>
+    <div *ngIf="turnFinished">Turno terminado. Presiona "Mark Play" para registrar la jugada.</div>
+  </div>
+  
